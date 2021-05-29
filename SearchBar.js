@@ -1,9 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
-class SearchBar extends React.Component {
-  state = {
-    input: "",
-  };
+const SearchBar = ({ onSubmit }) => {
+  const [input, setInput] = useState("");
 
   //can write a callback function to pass in as a prop below, but we wrote an arrow fn below instead
   // onInputChange = (event) => {
@@ -13,35 +11,34 @@ class SearchBar extends React.Component {
   //can also write an arrow function in the prop rather than defining a separate method:
   // <input onChange={(event) => this.setState( input: event.target.value})} />
 
-  onFormSubmit = (e) => {
+  const onFormSubmit = (e) => {
     e.preventDefault();
 
-    this.props.onSubmit(this.state.input);
+    onSubmit(input);
 
     //trying to get the search bar to empty after hitting enter - this currently makes sb disappear lul
     // e.target.textContent = "";
   };
 
-  render() {
-    return (
-      <div className="ui segment">
-        <div className="ui field raised segment">
-          <div className="ui massive input">
-            <form onSubmit={this.onFormSubmit}>
-              {/* onInputChange passed as prop to searchbar */}
-              <input
-                type="text"
-                value={this.state.input}
-                placeholder="search here..."
-                onChange={(e) => this.setState({ input: e.target.value })}
-              />
-            </form>
-          </div>
-          <button className="ui red button">Add a hero</button>
+  return (
+    <div className="ui segment">
+      <div className="ui field raised segment">
+        <div className="ui massive input">
+          <form onSubmit={onFormSubmit}>
+            {/* onInputChange passed as prop to searchbar */}
+            <input
+              type="text"
+              value={input}
+              placeholder="search here..."
+              onChange={(e) => setInput(e.target.value)}
+            />
+          </form>
         </div>
+        <button className="ui red button">Add a hero</button>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default SearchBar;
+
