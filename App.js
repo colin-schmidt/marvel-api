@@ -1,14 +1,12 @@
 import axios from "axios";
-import React from "react";
+import React, { useState } from "react";
 import SearchBar from "./SearchBar";
 import HeroGrid from "./HeroGrid";
 
-class App extends React.Component {
-  state = {
-    character: "",
-  };
+const App = () => {
+  const [character, setCharacter] = useState("");
 
-  onSearchSubmit = async (input) => {
+  const onSearchSubmit = async (input) => {
     const { data } = await axios.get(
       "https://gateway.marvel.com/v1/public/characters",
       {
@@ -18,20 +16,16 @@ class App extends React.Component {
         },
       }
     );
-    this.setState({ character: data });
+    setCharacter(data);
   };
 
-  //Will pass getChar as a prop to searchbar so that sb's contents can be searched in api
-  render() {
-    return (
-      <div>
-        <SearchBar onSubmit={this.onSearchSubmit} />
-        <HeroGrid characterName={this.state.character} />
-        <HeroGrid characterName={this.state.character} />
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <SearchBar onSubmit={onSearchSubmit} />
+      <HeroGrid characterName={character} />
+    </div>
+  );
+};
 
 export default App;
 
