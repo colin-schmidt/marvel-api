@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
-import SearchBar from "./components/SearchBar";
-import HeroGrid from "./components/HeroGrid";
-import FailedSearch from "./components/FailedSearch";
+import SearchBar from "./SearchBar";
+import HeroGrid from "./HeroGrid";
+import FailedSearch from "./FailedSearch";
 
 const App = () => {
   const [character, setCharacter] = useState("");
@@ -23,10 +23,14 @@ const App = () => {
   return (
     <div>
       <SearchBar onSubmit={onSearchSubmit} />
-      <HeroGrid characterName={character} setCharacter={setCharacter} />
-      {/* <FailedSearch characterName={character} /> */}
+      <HeroGrid characterName={character} />
+      <FailedSearch />
     </div>
   );
 };
 
 export default App;
+
+//Add dotted line empty segments to the rest of the grid if less than 6 heroes are present
+//Make reroll run the api fetch again
+//Figure out how to access results of a 2nd api request while maintaining the data from the first

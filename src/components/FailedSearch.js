@@ -9,7 +9,7 @@ const FailedSearch = ({ characterName }) => {
         src="../../public/images/confused-hulk.jpg"
         alt="Confused Hulk"
       ></img>
-      {/* {apiCall} */}
+      {apiCall}
     </div>
   );
 };
