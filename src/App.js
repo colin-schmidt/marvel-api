@@ -24,7 +24,7 @@ const App = () => {
     <div>
       <SearchBar onSubmit={onSearchSubmit} />
       <HeroGrid characterName={character} setCharacter={setCharacter} />
-      <FailedSearch characterName={character} />
+      {/* <FailedSearch characterName={character} /> */}
     </div>
   );
 };

@@ -23,6 +23,7 @@ const App = () => {
     <div>
       <SearchBar onSubmit={onSearchSubmit} />
       <HeroGrid characterName={character} />
+      <FailedSearch />
     </div>
   );
 };

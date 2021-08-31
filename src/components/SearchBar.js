@@ -13,7 +13,7 @@ const SearchBar = ({ onSubmit }) => {
   return (
     <div className="ui segment">
       <div className="ui field raised segment">
-        <div className="ui massive input">
+        <div className="ui huge input">
           <form onSubmit={onFormSubmit}>
             {/* onInputChange passed as prop to searchbar */}
             <input
@@ -25,7 +25,7 @@ const SearchBar = ({ onSubmit }) => {
             />
           </form>
         </div>
-        <button className="ui red button">Add a hero</button>
+        <button className="ui red small button">Add a hero</button>
       </div>
     </div>
   );

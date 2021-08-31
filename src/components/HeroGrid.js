@@ -1,5 +1,5 @@
 import React from "react";
-import "../HeroGrid.css";
+import "./HeroGrid.css";
 
 const HeroGrid = ({ characterName, setCharacter }) => {
   const apiCall = !characterName ? null : characterName.data.results[0];
