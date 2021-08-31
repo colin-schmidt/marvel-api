@@ -23,8 +23,8 @@ const App = () => {
   return (
     <div>
       <SearchBar onSubmit={onSearchSubmit} />
-      <HeroGrid characterName={character} />
-      <FailedSearch />
+      <HeroGrid characterName={character} setCharacter={setCharacter} />
+      {/* <FailedSearch /> */}
     </div>
   );
 };
