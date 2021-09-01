@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import SearchBar from "./SearchBar";
 import HeroGrid from "./HeroGrid";
-import FailedSearch from "./FailedSearch";
+
 
 const App = () => {
   const [character, setCharacter] = useState("");
@@ -18,19 +18,26 @@ const App = () => {
       }
     );
     setCharacter(data);
+    console.log(data.data.results);
   };
 
   return (
     <div>
       <SearchBar onSubmit={onSearchSubmit} />
       <HeroGrid characterName={character} setCharacter={setCharacter} />
-      {/* <FailedSearch /> */}
     </div>
   );
 };
 
 export default App;
+/*
 
-//Add dotted line empty segments to the rest of the grid if less than 6 heroes are present
-//Make reroll run the api fetch again
-//Figure out how to access results of a 2nd api request while maintaining the data from the first
+Error screen:
+
+For an incorrect hero name:
+-if API call doesn't have "results" --> display FailedSearch
+
+For a 404 or actual API failure:
+-look at Marvel API docs, is there an error message that I could set to state, then display?
+
+*/
