@@ -2,10 +2,11 @@ import axios from "axios";
 import React, { useState } from "react";
 import SearchBar from "./SearchBar";
 import HeroGrid from "./HeroGrid";
-
+import NoHeroFound from "./NoHeroFound";
 
 const App = () => {
   const [character, setCharacter] = useState("");
+  const [noResults, setNoResults] = useState(false);
 
   const onSearchSubmit = async (input) => {
     const { data } = await axios.get(
@@ -18,26 +19,24 @@ const App = () => {
       }
     );
     setCharacter(data);
-    console.log(data.data.results);
+    if (!data.data.results.length) {
+      setNoResults(true);
+    } else {
+      setNoResults(false);
+    }
   };
 
   return (
     <div>
       <SearchBar onSubmit={onSearchSubmit} />
-      <HeroGrid characterName={character} setCharacter={setCharacter} />
+      <HeroGrid
+        character={character}
+        setCharacter={setCharacter}
+        setNoResults={setNoResults}
+      />
+      <NoHeroFound noResults={noResults} />
     </div>
   );
 };
 
 export default App;
-/*
-
-Error screen:
-
-For an incorrect hero name:
--if API call doesn't have "results" --> display FailedSearch
-
-For a 404 or actual API failure:
--look at Marvel API docs, is there an error message that I could set to state, then display?
-
-*/

@@ -5,3 +5,16 @@
 .header {
   margin-bottom: 10px;
 }
+
+.cards {
+  padding-left: 3rem;
+  padding-top: 2rem;
+}
+
+.appeared {
+  padding-bottom: 1rem;
+}
+
+.heroBio {
+  padding-bottom: 1rem;
+}
