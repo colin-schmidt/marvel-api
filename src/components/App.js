@@ -5,7 +5,7 @@ import HeroGrid from "./HeroGrid";
 import NoHeroFound from "./NoHeroFound";
 
 const App = () => {
-  const [character, setCharacter] = useState("");
+  const [character, setCharacter] = useState([]);
   const [noResults, setNoResults] = useState(false);
 
   const onSearchSubmit = async (input) => {
@@ -18,12 +18,25 @@ const App = () => {
         },
       }
     );
-    setCharacter(data);
+
+    console.log(character);
+
+    const pushHero = () => {
+      setCharacter(prevArray => [...prevArray, data])
+    }
+
+    if (character == []) {
+      setCharacter(data);
+    } else {
+      setCharacter(prevArray => [...prevArray, data])
+    }
+
     if (!data.data.results.length) {
       setNoResults(true);
     } else {
       setNoResults(false);
     }
+    console.log(character);
   };
 
   return (

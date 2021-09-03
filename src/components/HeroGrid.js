@@ -2,7 +2,8 @@ import React from "react";
 import "./HeroGrid.css";
 
 const HeroGrid = ({ character, setCharacter }) => {
-  const apiResults = !character ? null : character.data.results[0];
+
+  const apiResults = character == false ? null : character.data.results[0];
 
   if (apiResults) {
     return (
@@ -26,7 +27,7 @@ const HeroGrid = ({ character, setCharacter }) => {
                 ? `🦸‍♂️${apiResults.description}`
                 : "🦸‍♂️No bio available."}
             </div>
-            <button className="ui button red" onClick={() => setCharacter("")}>
+            <button className="ui button red" onClick={() => setCharacter([])}>
               Remove hero
             </button>
           </div>
