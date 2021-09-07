@@ -19,34 +19,33 @@ const App = () => {
       }
     );
 
-    console.log(character);
-
     const pushHero = () => {
-      setCharacter(prevArray => [...prevArray, data])
-    }
+      setCharacter((prevArray) => [...prevArray, data.data.results[0]]);
+    };
 
-    if (character == []) {
-      setCharacter(data);
+    if (!character) {
+      setCharacter([data.data.results[0]]);
     } else {
-      setCharacter(prevArray => [...prevArray, data])
+      pushHero(character);
     }
 
-    if (!data.data.results.length) {
+    //This could be problem w/ confused hulk not rendering:
+
+    //************************************************** */
+    if (!character) {
       setNoResults(true);
     } else {
       setNoResults(false);
     }
-    console.log(character);
   };
+
+  console.log(character.length);
+  console.log(character);
 
   return (
     <div>
       <SearchBar onSubmit={onSearchSubmit} />
-      <HeroGrid
-        character={character}
-        setCharacter={setCharacter}
-        setNoResults={setNoResults}
-      />
+      <HeroGrid character={character} setCharacter={setCharacter} />
       <NoHeroFound noResults={noResults} />
     </div>
   );
