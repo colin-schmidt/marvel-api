@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
 
-const SearchBar = ({ onSubmit }) => {
+const SearchBar = ({ onSubmit, setNoResults }) => {
   const [input, setInput] = useState("");
 
   const onFormSubmit = (e) => {
     e.preventDefault();
-    onSubmit(input);
+    input.length ? onSubmit(input) : setNoResults(true);
     setInput("");
   };
 
