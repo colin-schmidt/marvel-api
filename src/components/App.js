@@ -38,9 +38,7 @@ const App = () => {
       });
     };
 
-    console.log(character);
-
-    //specifying id breaks confused hulk if character already has 1+ heroes, but does render spiderman
+    //added "data.data.results[0]" to if block to allow confusedHulk to still render when 1+ heroes had already rendered
     for (let i = 0; i < character.length; i++) {
       if (data.data.results[0] && character[i].id === data.data.results[0].id) {
         setDuplicate(true);
