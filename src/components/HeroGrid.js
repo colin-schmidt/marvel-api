@@ -2,7 +2,6 @@ import React from "react";
 import "./HeroGrid.css";
 
 const HeroGrid = ({ character, setCharacter, noResults, duplicate }) => {
-
   if (character.length > 0 && !noResults && !duplicate) {
     return character.map((arr) => (
       <div className="ui link cards" key={arr.name}>
@@ -32,7 +31,3 @@ const HeroGrid = ({ character, setCharacter, noResults, duplicate }) => {
 };
 
 export default HeroGrid;
-
-//use map for this?:
-//if this element in character has the same whatever as another element, return spiderman pointing, else
-//return above card

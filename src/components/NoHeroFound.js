@@ -29,5 +29,3 @@ const NoHeroFound = ({ noResults, setNoResults }) => {
 };
 
 export default NoHeroFound;
-
-//onClick={() => setCharacter([])}

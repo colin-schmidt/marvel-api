@@ -15,7 +15,6 @@ const SearchBar = ({ onSubmit, setNoResults }) => {
       <div className="ui field raised segment">
         <div className="ui huge input">
           <form onSubmit={onFormSubmit}>
-            {/* onInputChange passed as prop to searchbar */}
             <input
               type="text"
               value={input}
