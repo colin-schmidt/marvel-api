@@ -1,8 +1,9 @@
 import React from "react";
 import "./ErrorScreens.css";
 
-const NoHeroFound = ({ noResults, setNoResults }) => {
-  if (noResults) {
+const NoHeroFound = ({ noResults, setNoResults, duplicate }) => {
+  //add && !duplicate below to avoid simult. rendering NoHeroFound and DuplicateHero
+  if (noResults && !duplicate) {
     return (
       <div className="error-screen">
         <img
@@ -18,7 +19,7 @@ const NoHeroFound = ({ noResults, setNoResults }) => {
           </h2>
           <button
             className="ui red massive button"
-            onClick={() => setNoResults(false)}
+            onClick={() => (duplicate ? null : setNoResults(false))}
           >
             Back to my team
           </button>

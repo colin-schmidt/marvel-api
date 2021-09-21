@@ -26,7 +26,9 @@ const App = () => {
       }
     );
 
-    setLoading(false);
+    // setLoading(false);
+    //added setDuplicate(false) below to stop rendering DuplicateHero when a successful API call is made (if DuplicateHero is visible)
+    setDuplicate(false);
 
     const checkDupe = (hero) => hero === data.data.results[0];
 
@@ -67,7 +69,11 @@ const App = () => {
         noResults={noResults}
         duplicate={duplicate}
       />
-      <NoHeroFound noResults={noResults} setNoResults={setNoResults} />
+      <NoHeroFound
+        noResults={noResults}
+        setNoResults={setNoResults}
+        duplicate={duplicate}
+      />
       <LoadingSpinner loading={loading} />
       <DuplicateHero duplicate={duplicate} setDuplicate={setDuplicate} />
       <Footer />
@@ -76,3 +82,9 @@ const App = () => {
 };
 
 export default App;
+
+/*
+
+
+
+*/
