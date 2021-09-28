@@ -2,3 +2,16 @@
   margin: 1rem;
 }
 
+.raised {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  height: 3rem;
+  transform: translate(0, 35%);
+}
+
+.search-bar {
+  height: 3rem;
+}

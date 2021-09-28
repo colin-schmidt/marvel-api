@@ -9,6 +9,7 @@
 .cards {
   padding-left: 3rem;
   padding-top: 2rem;
+  margin-top: 5rem;
 }
 
 .appeared {
@@ -17,4 +18,20 @@
 
 .heroBio {
   padding-bottom: 1rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 30px;
+  font-weight: 500;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: white;
+  text-decoration: none;
+  border-radius: 200px;
+  border: 0px;
+  transition: background-color 0.2s, border 0.2s, color 0.2s;
+  background-color: red;
+  margin-bottom: 1rem;
+  cursor: pointer;
 }

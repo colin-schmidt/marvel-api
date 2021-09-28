@@ -11,23 +11,22 @@ const SearchBar = ({ onSubmit, setNoResults }) => {
   };
 
   return (
-    <div className="ui segment">
-      <div className="ui field raised segment">
-        <div className="ui huge input">
-          <form onSubmit={onFormSubmit}>
-            <input
-              type="text"
-              value={input}
-              placeholder="search here..."
-              onChange={(e) => setInput(e.target.value)}
-              onSubmit={onFormSubmit}
-            />
-          </form>
-        </div>
-        <button className="ui red small button" onClick={onFormSubmit}>
-          Add a hero
-        </button>
+    <div className="ui raised segment">
+      <div className="ui huge input">
+        <form onSubmit={onFormSubmit}>
+          <input
+            className="search-bar"
+            type="text"
+            value={input}
+            placeholder="search here..."
+            onChange={(e) => setInput(e.target.value)}
+            onSubmit={onFormSubmit}
+          />
+        </form>
       </div>
+      <button className="ui red small button" onClick={onFormSubmit}>
+        Add a hero
+      </button>
     </div>
   );
 };

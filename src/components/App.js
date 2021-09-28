@@ -26,7 +26,7 @@ const App = () => {
       }
     );
 
-    // setLoading(false);
+    setLoading(false);
     //added setDuplicate(false) below to stop rendering DuplicateHero when a successful API call is made (if DuplicateHero is visible)
     setDuplicate(false);
 
@@ -76,15 +76,9 @@ const App = () => {
       />
       <LoadingSpinner loading={loading} />
       <DuplicateHero duplicate={duplicate} setDuplicate={setDuplicate} />
-      <Footer />
+      <Footer character={character} />
     </div>
   );
 };
 
 export default App;
-
-/*
-
-
-
-*/
