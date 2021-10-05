@@ -76,7 +76,11 @@ const App = () => {
       />
       <LoadingSpinner loading={loading} />
       <DuplicateHero duplicate={duplicate} setDuplicate={setDuplicate} />
-      <Footer character={character} />
+      <Footer
+        character={character}
+        noResults={noResults}
+        duplicate={duplicate}
+      />
     </div>
   );
 };

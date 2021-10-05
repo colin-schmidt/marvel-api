@@ -12,6 +12,11 @@ const SearchBar = ({ onSubmit, setNoResults }) => {
 
   return (
     <div className="ui raised segment">
+      <img
+        className="header-logo"
+        alt="marvel logo"
+        src="images/small-marvel-logo.png"
+      ></img>
       <div className="ui huge input">
         <form onSubmit={onFormSubmit}>
           <input
@@ -24,8 +29,8 @@ const SearchBar = ({ onSubmit, setNoResults }) => {
           />
         </form>
       </div>
-      <button className="ui red small button" onClick={onFormSubmit}>
-        Add a hero
+      <button className="ui red button" onClick={onFormSubmit}>
+        Add
       </button>
     </div>
   );

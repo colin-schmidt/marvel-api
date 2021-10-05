@@ -1,5 +1,5 @@
 import React from "react";
-import "./ErrorScreens.css";
+import "./DuplicateHero.css";
 
 const DuplicateHero = ({ duplicate, setDuplicate }) => {
   if (duplicate) {
@@ -11,9 +11,9 @@ const DuplicateHero = ({ duplicate, setDuplicate }) => {
           alt="Spider-Man Pointing"
         ></img>
         <div>
-          <h2>Sorry! You can't select the same hero more than once.</h2>
+          <h2 className="error-text">Sorry! You can't select the same hero more than once.</h2>
           <button
-            className="ui red massive button"
+            className="ui red large button"
             onClick={() => setDuplicate(false)}
           >
             Back to my team

@@ -1,26 +1,13 @@
-.description {
-  margin-bottom: 30px;
-}
-
-.header {
-  margin-bottom: 10px;
-}
 
 .cards {
-  padding-left: 3rem;
   padding-top: 2rem;
-  margin-top: 5rem;
 }
 
 .appeared {
   padding-bottom: 1rem;
 }
 
-.heroBio {
-  padding-bottom: 1rem;
-}
-
-.button {
+/* .button {
   display: inline-block;
   padding: 10px 30px;
   font-weight: 500;
@@ -34,4 +21,4 @@
   background-color: red;
   margin-bottom: 1rem;
   cursor: pointer;
-}
+} */

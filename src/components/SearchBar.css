@@ -5,6 +5,7 @@
 .raised {
   display: flex;
   justify-content: center;
+  background: gray;
 }
 
 .button {
@@ -14,4 +15,23 @@
 
 .search-bar {
   height: 3rem;
+}
+
+.header-logo {
+  height: 5rem;
+}
+
+@media only screen and (max-width: 450px) {
+  .header-logo {
+    height: 3rem;
+    transform: translateY(20%);
+  }
+  .search-bar {
+    height: 100%;
+    width: 100%;
+  }
+  .button {
+    height: 3rem;
+    transform: translateY(20%);
+  }
 }

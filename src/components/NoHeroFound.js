@@ -1,5 +1,5 @@
 import React from "react";
-import "./ErrorScreens.css";
+import "./NoHeroFound.css";
 
 const NoHeroFound = ({ noResults, setNoResults, duplicate }) => {
   //add && !duplicate below to avoid simult. rendering NoHeroFound and DuplicateHero
@@ -12,13 +12,13 @@ const NoHeroFound = ({ noResults, setNoResults, duplicate }) => {
           alt="Confused Hulk"
         ></img>
         <div>
-          <h2>
+          <h2 className="error-text">
             Sorry! We weren't able to find your hero. <br />
             Please verify that you spelled your hero's name right ( i.e.
             M.O.D.O.K. instead of MODOK )
           </h2>
           <button
-            className="ui red massive button"
+            className="ui red large button"
             onClick={() => (duplicate ? null : setNoResults(false))}
           >
             Back to my team

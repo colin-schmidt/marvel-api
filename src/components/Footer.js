@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 
-const Footer = ({ character }) => {
+const Footer = ({ character, duplicate, noResults }) => {
   const [copyright, setCopyright] = useState("");
 
   const apiSearch = async () => {
@@ -22,7 +22,7 @@ const Footer = ({ character }) => {
   }, []);
 
   //helper variable to change footer's position based on length of character
-  const footerPosition = character.length < 2 ? "fixed" : "static";
+  const footerPosition = character.length < 2 || duplicate || noResults ? "fixed" : "static";
 
   return (
     <div
@@ -33,6 +33,7 @@ const Footer = ({ character }) => {
         position: `${footerPosition}`,
         width: "100%",
         zIndex: 10,
+        marginTop: "3rem",
       }}
     >
       <p>{copyright}</p>
